@@ -1,0 +1,65 @@
+<form
+      role="form"
+      ng-show="show_login">
+    <input
+           ng-model="username_login"
+           type="text"
+           placeholder="{{username_login_t}}" />
+    <input
+           ng-model="password_login"
+           type="password"
+           placeholder="{{password_login_t}}" />
+    <button
+            type="button"
+            class="btn btn-default btn-sm"
+            ng-model="submit_login"
+            ng-click="login()" >
+        <span
+              class="glyphicon glyphicon-chevron-left">
+        </span>
+        {{ submit_login }}
+    </button>
+</form>
+
+<form
+      role="form"
+      ng-show="show_register">
+    <input
+           ng-model="display_name"
+           type="test"
+           placeholder="{{display_name_t}}" />
+    <input
+           ng-model="username_register"
+           type="text"
+           placeholder="{{username_register_t}}" />
+    <input
+           ng-model="password_register"
+           type="password"
+           placeholder="{{password_register_t}}" />
+    <button
+            type="button"
+            class="btn btn-default btn-sm"
+            ng-model="submit_register"
+            ng-click="register()" >
+        <span
+              class="glyphicon glyphicon-chevron-left">
+        </span>
+        {{ submit_register }}
+    </button>
+</form>
+
+<form
+      role="form"
+      ng-show="show_logout">
+    <button
+            type="button"
+            class="btn btn-default btn-sm"
+            ng-model="submit_logout"
+            ng-value="submit_logout"
+            ng-click="logout()" >
+        <span
+              class="glyphicon glyphicon-eject">
+        </span>
+        {{ submit_logout }}
+    </button>
+</form>

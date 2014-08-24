@@ -1,0 +1,32 @@
+<div>
+    <ul>
+        <li ng-repeat="t in test">{{ t }}</li>
+    </ul>
+    <div id='txt'></div>
+    {{msg}}<input type="text" id="txtField" ng-model="msg"/>
+    <input type="submit" onclick="socket.close();" value="close"/>
+    <input type="submit" onclick="sendMessage(getText());" value="send"/>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var txt = null;
+    var socket = io('http://localhost:3000/');
+    function getText(){
+        return txtField.value;
+    }
+    function sendMessage(msg) {
+        socket.send(msg);
+    }
+    socket.on('connect', function () {
+        sendMessage('hi');
+
+        socket.on('message', function (msg) {
+            //document.write(msg);
+            txt.innerHTML = "<pre>ok</pre>";
+        });
+    });
+</script>
+<script>
+    var txt = document.getElementById('txt');
+    var txtField = document.getElementById('txtField');
+</script>

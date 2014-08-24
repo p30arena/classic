@@ -1,7 +1,7 @@
 #!/bin/env node
 var express = require('express'),
     bodyParser = require('body-parser'),
-    Router = require('app/router'),
+    Router = require('app/handlers/router'),
     app = express(),
     server = require('http').Server(app);
 
